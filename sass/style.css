@@ -1,85 +1,76 @@
-body {
-    margin: 0;
-}
-
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Encode+Sans+Condensed:400,700&subset=latin-ext");
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.ui-sortable {
-    min-height: 80px;
+body {
+  font-family: 'Encode Sans Condensed', sans-serif;
 }
 
-.btn-delete {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 22px;
-    height: 22px;
-    border: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
+.board {
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* BOARD */
 .board h1 {
-    margin-left: 8px;
+  font-family: 'Bree Serif', serif;
+  margin-top: 0;
+  padding: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  background-image: url("https://allucard79.github.io/Trello/images/Banner.jpg");
 }
 
 .column-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
+.create-column {
+  margin-top: 20px;
+}
 
-/* COLUMN */
 .column {
-    order: 1;
-    min-width: 300px;
-    min-height: 50vh;
-    background-color: lightgrey;
-    margin-left: 8px;
-    list-style: none;
-    position: relative;
+  width: 100%;
+  border: 2px solid black;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 30px;
+  height: 600px;
+  min-width: 250px;
 }
 
-.column-add-card {
-    cursor: pointer;
-    text-decoration: underline;
-    margin: 5px 8px;
-    display: block;
+.column ul {
+  list-style-type: none;
+  height: 550px;
 }
 
-/* STYLE KARTY */
+.column ul {
+  list-style-type: none;
+}
+
 .card {
-    box-sizing: border-box;
-    display: block;
-    height: 60px;
-    margin-bottom: 5px;
-    padding: 4px;
-    overflow: hidden;
-    position: relative;
+  background-color: #D8E4F4;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
 }
 
-.card-list {
-    list-style: none;
-    margin: 5px;
-    padding: 0px;
+.card:hover {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
-
-.card-description {
-    margin: 2px 0;
-}
-
-.card-placeholder {
-    box-sizing: border-box;
-    display: block;
-    height: 60px;
-    margin-bottom: 5px;
-    border: 2px solid lightgrey;
-    background-color: lightblue;
-}
-
-/* No CSS */
 /*# sourceMappingURL=style.css.map */
