@@ -26,24 +26,21 @@ function Column(id, name) {
             event.preventDefault();
 
             var data = new FormData();
-            data.append('name', cardName);
-            data.append('bootcamp_kanban_column_id', self.id);
-          
-            fetch(prefix + baseUrl + '/card', {
-                method: 'POST',
-                body: {
-                    method: 'POST',
-                    headers: myHeaders,
-                    body: data,
-                }
-              })
-              .then(function(res) {
-                return res.json();
-              })
-              .then(function(resp) {
-                var card = new Card(resp.id, cardName);
-                self.addCard(card);
-              });
+data.append('name', cardName);
+data.append('bootcamp_kanban_column_id', self.id);
+
+fetch(prefix + baseUrl + '/card', {
+    method: 'POST',
+    headers: myHeaders,
+    body: data,
+  })
+  .then(function(res) {
+    return res.json();
+  })
+  .then(function(resp) {
+    var card = new Card(resp.id, cardName);
+    self.addCard(card);
+  });
           }
     });
 }
@@ -51,14 +48,15 @@ function Column(id, name) {
         addCard: function(card) {
           this.element.querySelector('ul').appendChild(card.element);
         },
-        removeColumn: function() {
+        removeCard: function() {
           var self = this;
-          fetch(prefix + baseUrl + '/column/' + self.id, { method: 'DELETE', headers: myHeaders })
+        
+          fetch(prefix + baseUrl + '/card/' + self.id, { method: 'DELETE', headers: myHeaders })
             .then(function(resp) {
               return resp.json();
             })
             .then(function(resp) {
-              self.element.parentNode.removeChild(self.element);
-            });
+              self.element.parentNode.removeChild(this.element);
+            })
         }
       };
