@@ -48,15 +48,14 @@ fetch(prefix + baseUrl + '/card', {
         addCard: function(card) {
           this.element.querySelector('ul').appendChild(card.element);
         },
-        removeCard: function() {
+        removeColumn: function() {
           var self = this;
-        
-          fetch(prefix + baseUrl + '/card/' + self.id, { method: 'DELETE', headers: myHeaders })
+          fetch(prefix + baseUrl + '/column/' + self.id, { method: 'DELETE', headers: myHeaders })
             .then(function(resp) {
               return resp.json();
             })
             .then(function(resp) {
-              self.element.parentNode.removeChild(this.element);
-            })
+              self.element.parentNode.removeChild(self.element);
+            });
         }
       };
